@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #5A0060;
+  --secondary-color: #D7A8B2;
+  --accent-color: #FF2DAE;
+  --background-color: #0F0A1A;
+  --text-light: #F9ECF2;
+  --text-dark: #320026;
+  --font-main: 'Playfair Display', serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  font-family: var(--font-main);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.4rem; }
+
+p {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+.button {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--text-light);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: all 0.4s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+.card {
+  background: rgba(217, 168, 178, 0.05);
+  border: 1px solid rgba(255, 45, 174, 0.15);
+  backdrop-filter: blur(10px);
+  color: var(--text-light);
+  padding: 30px;
+  width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255, 45, 174, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 45, 174, 0.2);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.navbar h1 {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1.8rem;
+  font-family: var(--font-main);
+}
+
+.navbar nav a {
+  color: var(--text-light);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  margin: 0 15px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-family: var(--font-secondary);
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  background-color: #0F0A1A;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}

@@ -129,7 +129,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+    emailjs.init("R8YQ6uFuEg24lKXoj"); // Replace with your EmailJS user ID
 
     function loadCart() {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -159,7 +159,7 @@
 
     document.getElementById("orderForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+      emailjs.sendForm("service_ps73eee", "template_xkluzkn", this)
         .then(() => {
           alert("Order submitted! You’ll receive a confirmation email.");
           clearCart();

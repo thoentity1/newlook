@@ -155,7 +155,7 @@
         row.innerHTML = `<td>${item.product}</td><td>R${item.price}</td>`;
         cartItems.appendChild(row);
         total += parseFloat(item.price);
-        summary += `${product} - R${price}\n`;
+        summary += `${item.product} - R${item.price}\n`;
       });
 
       totalDisplay.textContent = "R" + total;

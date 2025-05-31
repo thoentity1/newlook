@@ -80,6 +80,13 @@
       padding: 20px;
       font-size: 0.9rem;
     }
+    .note {
+      color: #bbb;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -112,9 +119,11 @@
     <select name="delivery" required>
       <option value="">Select Delivery Option</option>
       <option value="Pickup (Free)">Pick-up (Free)</option>
-      <option value="Courier">Pingo box collection)</option>
-      >Courier fees will be based on location and weight, which will be invoiced prior to delivery<
+      <option value="Courier">Pingo Box Collection</option>
     </select>
+    <div class="note">
+      Courier fees will be based on location and weight, which will be invoiced prior to delivery.
+    </div>
     <input type="text" name="name" placeholder="Full Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <input type="text" name="address" placeholder="Street Address" required />
@@ -124,9 +133,13 @@
     <button type="submit">Submit Order</button>
   </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <footer>
+    © 2025 Phantom studioZ — Cart Page
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("R8YQ6uFuEg24lKXoj"); // Replace with your EmailJS user ID
+    emailjs.init("R8YQ6uFuEg24lKXoj"); // Replace with your actual EmailJS public key
 
     function loadCart() {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -139,10 +152,10 @@
 
       cart.forEach(item => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${product}</td><td>R${price}</td>`;
+        row.innerHTML = `<td>${item.product}</td><td>R${item.price}</td>`;
         cartItems.appendChild(row);
         total += parseFloat(item.price);
-        summary += `${product} - R${price}\n`;
+        summary += `${item.product} - R${item.price}\n`;
       });
 
       totalDisplay.textContent = "R" + total;
@@ -170,6 +183,4 @@
   </script>
 </body>
 </html>
-  <footer>
-    © 2025 Phantom studioZ — Cart Page
-  </footer>
+

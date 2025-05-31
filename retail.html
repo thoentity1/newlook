@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phantom studioZ | Retail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0710;
+      color: #fff;
+    }
+    .navbar {
+      background-color: #550060;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .navbar h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #ff00aa;
+    }
+    h2 {
+      text-align: center;
+      color: #ff00aa;
+      margin-top: 40px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .product {
+      background: #1a1124;
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 0, 170, 0.2);
+    }
+    .product h3 {
+      color: #ff00aa;
+    }
+    .product button {
+      background-color: #ff00aa;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background-color: #cc0088;
+    }
+    .cart-btn {
+      display: block;
+      text-align: center;
+      margin: 30px;
+    }
+    .cart-btn a {
+      background: #ff00aa;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1124;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1>Phantom studioZ</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="retail.html">Retail</a>
+      <a href="cart.html">Cart</a>
+      <a href="#">Services</a>
+      <a href="#">Academy</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
+  <h2>Shop Our Shades</h2>
+  <section class="products">
+    <div class="product">
+      <h3>Glow Serum</h3>
+      <p>R180</p>
+      <button onclick="addToCart('Glow Serum', 180)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <h3>Silk Hair Oil</h3>
+      <p>R120</p>
+      <button onclick="addToCart('Silk Hair Oil', 120)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <h3>Lip Luxe Gloss</h3>
+      <p>R90</p>
+      <button onclick="addToCart('Lip Luxe Gloss', 90)">Add to Cart</button>
+    </div>
+  </section>
+
+  <div class="cart-btn">
+    <a href="cart.html">Go to Cart</a>
+  </div>
+
+  <footer>© 2025 Phantom studioZ — Retail Beauty Unleashed</footer>
+
+  <script>
+    function addToCart(product, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ product, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${product} added to cart.`);
+    }
+  </script>
+</body>
+</html>

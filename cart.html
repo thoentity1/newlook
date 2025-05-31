@@ -152,7 +152,7 @@
 
       cart.forEach(item => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${product}</td><td>R${price}</td>`;
+        row.innerHTML = `<td>${item.product}</td><td>R${item.price}</td>`;
         cartItems.appendChild(row);
         total += parseFloat(item.price);
         summary += `${product} - R${price}\n`;
